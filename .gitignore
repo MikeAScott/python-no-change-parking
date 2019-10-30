@@ -7,3 +7,5 @@ env
 venv
 *.sublime*
 .vscode
+dist
+*.egg-info
