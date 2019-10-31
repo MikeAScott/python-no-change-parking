@@ -3,6 +3,7 @@ import logging
 from flask import Flask
 from .config import Config
 from flask_appbuilder import AppBuilder, SQLA
+from app.index import NcpIndexView
 
 """
  Logging configuration
@@ -14,7 +15,7 @@ logging.getLogger().setLevel(logging.DEBUG)
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLA(app)
-appbuilder = AppBuilder(app, db.session)
+appbuilder = AppBuilder(app, db.session, indexview=NcpIndexView)
 
 
 """
