@@ -1,6 +1,8 @@
 from flask import render_template
 from flask_appbuilder.models.sqla.interface import SQLAInterface
+from flask_appbuilder.models.sqla.filters import FilterEqualFunction
 from flask_appbuilder import ModelView, ModelRestApi
+from datetime import date
 
 from . import appbuilder, db
 
@@ -58,6 +60,26 @@ appbuilder.add_view(
     "List Payments",
     icon = "fa-folder-open-o",
     category = "Payments",
+    category_icon = "fa-envelope"
+)
+
+class TodaysPaymentsView(ModelView):
+    datamodel = SQLAInterface(Payment)
+    base_filters = [ 
+        [ 'payment_date', FilterEqualFunction, date.today ]
+    ]
+
+    list_title = 'Todays Payments'
+    list_columns = ['vehicle_reg','driver']
+    show_columns = ['vehicle_reg','driver']
+    edit_columns = []
+
+
+appbuilder.add_view(
+    TodaysPaymentsView,
+    "Todays Payments",
+    icon = "fa-folder-open-o",
+    # category = "Payments",
     category_icon = "fa-envelope"
 )
 

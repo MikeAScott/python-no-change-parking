@@ -36,6 +36,12 @@ open http://localhost:5000
 xdg-open http://localhost:5000
 ```
 
+Package it
+----------
+``` bash
+python setup.py bdist_wheel
+```
+
 Deploy it properly
 ------------------
 Beyond the scope of this for now
