@@ -9,7 +9,7 @@ Prerequisites
 Install it
 ----------
 ``` bash
-git clone https://mikeascott/python-no-change-parking.git no-change-parking
+git clone https://github.com/mikeascott/python-no-change-parking.git no-change-parking
 cd no-change-parking
 # Create python virtual env
 virtualenv venv
