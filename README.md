@@ -4,7 +4,8 @@ Python flask builder implementation of No Change Parking
 
 Prerequisites
 -------------
-* Python 3 
+* Python 3
+* pip3
 
 Install it
 ----------
@@ -15,7 +16,7 @@ cd no-change-parking
 virtualenv venv
 source venv/bin/activate
 # Install required libraries into the virtual env
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 Run it
 ------
@@ -39,7 +40,7 @@ xdg-open http://localhost:5000
 Package it
 ----------
 ``` bash
-python setup.py bdist_wheel
+python3 setup.py bdist_wheel
 ```
 
 Deploy it properly

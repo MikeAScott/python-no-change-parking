@@ -12,8 +12,9 @@ usage () {
 
 build () {
   echo 'Building venv environment'
+  pip3 install virtualenv
   virtualenv venv
-  pip install -r requirements.txt
+  pip3 install -r requirements.txt
   echo -e '\nTo use the environment:\nsource venv/bin/activate\n...\ndeactivate\n'
 }
 
@@ -31,7 +32,7 @@ package () {
   echo 'Building distributable package'
   virtualenv package_venv
   source package_venv/bin/activate
-  python setup.py bdist_wheel
+  python3 setup.py bdist_wheel
 
   deactivate
   rm -rf package_venv
